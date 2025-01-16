@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Xadrez
+namespace Xadrez.tabuleiro
 {
     internal class Posicao
     {
-        public Posicao(int v1, int v2)
-        {
-        }
     }
 }
