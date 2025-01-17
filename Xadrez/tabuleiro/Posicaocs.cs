@@ -1,11 +1,12 @@
-﻿namespace tabuleiro
+﻿
+namespace tabuleiro
 {
-    internal class Posicao
+    internal class Posicaocs
     {
         public int Linha { get; set; }
         public int Coluna { get; set; }
 
-        public Posicao(int linha, int coluna)
+        public Posicaocs(int linha, int coluna)
         {
             Linha = linha;
             Coluna = coluna;
@@ -13,8 +14,8 @@
         public override string ToString()
         {
             return Linha 
-                + ":"
-                + Coluna;    
+                + ", "
+                + Coluna;
         }
     }
 }

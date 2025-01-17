@@ -1,0 +1,7 @@
+C:\Users\paulo\OneDrive\Desktop\AulaC#\Xadrez\bin\Debug\Xadrez.exe.config
+C:\Users\paulo\OneDrive\Desktop\AulaC#\Xadrez\bin\Debug\Xadrez.exe
+C:\Users\paulo\OneDrive\Desktop\AulaC#\Xadrez\bin\Debug\Xadrez.pdb
+C:\Users\paulo\OneDrive\Desktop\AulaC#\Xadrez\obj\Debug\Xadrez.csproj.AssemblyReference.cache
+C:\Users\paulo\OneDrive\Desktop\AulaC#\Xadrez\obj\Debug\Xadrez.csproj.CoreCompileInputs.cache
+C:\Users\paulo\OneDrive\Desktop\AulaC#\Xadrez\obj\Debug\Xadrez.exe
+C:\Users\paulo\OneDrive\Desktop\AulaC#\Xadrez\obj\Debug\Xadrez.pdb
