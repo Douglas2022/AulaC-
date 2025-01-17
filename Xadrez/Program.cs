@@ -6,12 +6,8 @@ namespace Xadrez
     {
         static void Main(string[] args)
         {
-            Posicaocs P;
-            P = new Posicaocs(3,4);
-            Console.WriteLine("Posição: " + P);
-
+           Tabuleiro tab = new Tabuleiro(8,8);
             Console.ReadLine();
-
 
         }
     }
