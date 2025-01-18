@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Xadrez",
+    "\\Xadrez\\bin",
+    "\\Xadrez\\obj",
+    "\\Xadrez\\Properties",
+    "\\Xadrez\\tabuleiro"
   ],
+  "SelectedNode": "\\Xadrez\\Xadrez.sln",
   "PreviewInSolutionExplorer": false
 }
