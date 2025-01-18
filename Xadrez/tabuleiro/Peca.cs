@@ -10,10 +10,16 @@ namespace tabuleiro
 
         public Peca(Posicaocs posicao,Tabuleiro tab, Cor cor)
         {
-            Posicao = posicao;
+            Posicao = null;
             Cor = cor;
             Tab = tab;
             QtdeMOvimentos = 0;
+        }
+
+        public Peca(Tabuleiro tab, Cor cor)
+        {
+            Tab = tab;
+            Cor = cor;
         }
     }
 }
