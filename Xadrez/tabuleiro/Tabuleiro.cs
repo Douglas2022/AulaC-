@@ -1,4 +1,6 @@
-﻿namespace tabuleiro
+﻿using System.Diagnostics.SymbolStore;
+
+namespace tabuleiro
 {
     internal class Tabuleiro
     {
@@ -10,16 +12,40 @@
         {
             Linhas = linhas;
             Colunas = colunas;
-            pecas = new Peca[linhas,colunas];
+            pecas = new Peca[linhas, colunas];
         }
         public Peca peca(int linha, int coluna)
         {
-            return pecas[linha,coluna];
+            return pecas[linha, coluna];
         }
-        public void ColocarPeca(Peca P,Posicaocs Pos)
+        public Peca peca(Posicaocs pos)
+        {
+            return pecas[pos.Linha, pos.Coluna];
+        }
+        public bool ExistePeca(Posicaocs Pos)
+        {
+            ValidarPosicao(Pos);
+            return peca(Pos) != null;
+        }
+        public void ColocarPeca(Peca P, Posicaocs Pos)
         {
             pecas[Pos.Linha, Pos.Coluna] = P;
             P.Posicao = Pos;
+        }
+        public bool PosicaoValida(Posicaocs Pos)
+        {
+            if(Pos.Linha < 0||Pos.Linha >= Linhas || Pos.Coluna <= 0|| Pos.Coluna >= Colunas)
+            {
+                return false;
+            } 
+            return true;
+        }
+        public void ValidarPosicao(Posicaocs Pos)
+        {
+            if (!PosicaoValida(Pos))
+            {
+                throw new TabuleiroException('Posicao invalida!');
+            }
         }
     }
 }
