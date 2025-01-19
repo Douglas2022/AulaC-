@@ -15,6 +15,8 @@ namespace Xadrez
                 Tab.ColocarPeca(new Torre(Tab, Cor.Preta), new Posicaocs(1, 3));
                 Tab.ColocarPeca(new Rei(Tab, Cor.Preta), new Posicaocs(0, 2));
 
+                Tab.ColocarPeca(new Torre(Tab, Cor.Branca), new Posicaocs(3, 5));
+
                 Tela.ImprimirTAbuleiro(Tab);
 
             }

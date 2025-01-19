@@ -18,7 +18,8 @@ namespace Xadrez
                     }
                     else
                     {
-                        Console.Write(Tab.peca(i, j) + " ");
+                        Tela.ImprimirPeca(Tab.peca(i, j));
+                        Console.Write(" ");
                     }
 
                 }
@@ -26,7 +27,20 @@ namespace Xadrez
             }
             Console.WriteLine("  a b c d e f g h");
         }
-
+        public static void ImprimirPeca(Peca peca)
+        {
+            if( peca.Cor == Cor.Branca)
+            {
+                Console.Write(peca);
+            }
+            else
+            {
+                ConsoleColor aux = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write(peca);
+                Console.ForegroundColor = aux;
+            }
+        }
         
     }
 }
