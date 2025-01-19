@@ -9,6 +9,7 @@ namespace Xadrez
         {
             for (int i = 0; i < Tab.Linhas; i++)
             {
+                Console.Write(8 -  i + " ");
                 for (int j = 0; j < Tab.Colunas; j++)
                 {
                     if (Tab.peca(i, j) == null)
@@ -23,6 +24,7 @@ namespace Xadrez
                 }
                 Console.WriteLine();
             }
+            Console.WriteLine(" a b c d e f g h");
         }
 
         
