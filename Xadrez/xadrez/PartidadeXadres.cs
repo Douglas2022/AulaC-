@@ -1,12 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using tabuleiro;
 
-namespace Xadrez.xadrez
+namespace xadrez
 {
     internal class PartidadeXadres
     {
+        private Tabuleiro tab;
+        private int Turno;
+        private Cor JogadorAtual;
+
+
     }
 }
