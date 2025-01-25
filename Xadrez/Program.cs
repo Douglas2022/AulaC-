@@ -25,7 +25,6 @@ namespace Xadrez
 
                 }
 
-
             }
             catch (TabuleiroException e)
             {
