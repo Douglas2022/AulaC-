@@ -22,12 +22,18 @@ namespace xadrez
 
             Posicaocs Pos = new Posicaocs(0,0);
 
-            // acima
+            // Acima
+            Pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna + 1);
+            if (Tab.PosicaoValida(Pos) && PodeMover(Pos))
+            {
+                mat[Pos.Linha, Pos.Coluna] = true;
+            }
+            // Nordeste
             Pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna);
             if (Tab.PosicaoValida(Pos) && PodeMover(Pos))
             {
                 mat[Pos.Linha, Pos.Coluna] = true;
-            } 
+            }
         }
     }
 }
