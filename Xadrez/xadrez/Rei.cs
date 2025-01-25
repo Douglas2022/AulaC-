@@ -40,6 +40,12 @@ namespace xadrez
             {
                 mat[Pos.Linha, Pos.Coluna] = true;
             }
+            // Sudeste
+            Pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna + 1);
+            if (Tab.PosicaoValida(Pos) && PodeMover(Pos))
+            {
+                mat[Pos.Linha, Pos.Coluna] = true;
+            }
         }
     }
 }
