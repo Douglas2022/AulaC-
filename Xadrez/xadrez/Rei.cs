@@ -70,6 +70,7 @@ namespace xadrez
             {
                 mat[Pos.Linha, Pos.Coluna] = true;
             }
+            return mat;
         }
     }
     }
