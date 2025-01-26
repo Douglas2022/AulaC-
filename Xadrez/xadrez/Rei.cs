@@ -1,11 +1,11 @@
 ﻿using tabuleiro;
 namespace xadrez
 {
-    internal class Rei: Peca
+    internal class Rei : Peca
     {
-        public Rei(Tabuleiro tab,Cor cor) : base(tab, cor)
+        public Rei(Tabuleiro tab, Cor cor) : base(tab, cor)
         {
-            
+
         }
         public override string ToString()
         {
@@ -20,7 +20,7 @@ namespace xadrez
         {
             bool[,] mat = new bool[Tab.Linhas, Tab.Colunas];
 
-            Posicaocs Pos = new Posicaocs(0,0);
+            Posicaocs Pos = new Posicaocs(0, 0);
 
             // Acima
             Pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna);
@@ -59,13 +59,13 @@ namespace xadrez
                 mat[Pos.Linha, Pos.Coluna] = true;
             }
             // Esquerda
-            Pos.DefinirValores(Posicao.Linha , Posicao.Coluna - 1);
+            Pos.DefinirValores(Posicao.Linha, Posicao.Coluna - 1);
             if (Tab.PosicaoValida(Pos) && PodeMover(Pos))
             {
                 mat[Pos.Linha, Pos.Coluna] = true;
             }
             // Noroeste
-            Pos.DefinirValores(Posicao.Linha -1, Posicao.Coluna - 1);
+            Pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna - 1);
             if (Tab.PosicaoValida(Pos) && PodeMover(Pos))
             {
                 mat[Pos.Linha, Pos.Coluna] = true;
@@ -73,5 +73,5 @@ namespace xadrez
             return mat;
         }
     }
-    }
+
 }
