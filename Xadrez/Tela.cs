@@ -15,7 +15,7 @@ namespace Xadrez
                 {
                     ImprimirPeca(Tab.peca(i, j));
                 }
-                Console.WriteLine("-");
+                Console.WriteLine();
             }
             Console.WriteLine("  a b c d e f g h");
         }
@@ -30,7 +30,7 @@ namespace Xadrez
         {
             if (peca == null)
             {
-                Console.Write("-");
+                Console.Write("- ");
             }
             else
             {
