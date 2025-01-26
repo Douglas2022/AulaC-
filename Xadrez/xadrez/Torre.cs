@@ -34,6 +34,30 @@ namespace xadrez
                 }
                 Pos.Linha = Pos.Linha -1;
             }
+            //Abaixo
+            Pos.DefinirValores(Posicao.Linha +1, Posicao.Coluna);
+            while (Tab.PosicaoValida(Pos) && PodeMover(Pos))
+            {
+                mat[Pos.Linha, Pos.Coluna] = true;
+                if (Tab.peca(Pos) == null && Tab.peca(Pos).Cor != Cor)
+                {
+                    break;
+                }
+                Pos.Linha = Pos.Linha - 1;
+            }
+            //Direita
+            Pos.DefinirValores(Posicao.Linha, Posicao.Coluna +1);
+            while (Tab.PosicaoValida(Pos) && PodeMover(Pos))
+            {
+                mat[Pos.Linha, Pos.Coluna] = true;
+                if (Tab.peca(Pos) == null && Tab.peca(Pos).Cor != Cor)
+                {
+                    break;
+                }
+                Pos.Linha = Pos.Linha - 1;
+            }
+
+
 
 
             return mat;
