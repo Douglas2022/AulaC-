@@ -6,7 +6,7 @@ namespace Xadrez
 {
     internal class Tela
     {
-        public static void ImprimirTAbuleiro(Tabuleiro Tab)
+        public static void ImprimirTabuleiro(Tabuleiro Tab)
         {
             for (int i = 0; i < Tab.Linhas; i++)
             {
@@ -14,12 +14,13 @@ namespace Xadrez
                 for (int j = 0; j < Tab.Colunas; j++)
                 {
                     ImprimirPeca(Tab.peca(i, j));
+                   
                 }
                 Console.WriteLine();
             }
             Console.WriteLine("  a b c d e f g h");
         }
-        public static void ImprimirTabuleiro(Tabuleiro Tab, bool[,] PossicaoPossivel)
+        public static void ImprimirTabuleiro(Tabuleiro Tab, bool[,] PosicoesPossiveis)
         {
             ConsoleColor FundoOriginal = Console.BackgroundColor;
             ConsoleColor FundoAlterado = ConsoleColor.DarkGray;
@@ -29,7 +30,7 @@ namespace Xadrez
                 Console.Write(8 - i + " ");
                 for (int j = 0; j < Tab.Colunas; j++)
                 {
-                    if (PossicaoPossivel[i, j])
+                    if (PosicoesPossiveis[i, j])
                     {
                         Console.BackgroundColor = FundoAlterado;
                     }
@@ -39,7 +40,7 @@ namespace Xadrez
                     }
                     ImprimirPeca(Tab.peca(i, j));
                 }
-                Console.WriteLine("");
+                Console.WriteLine();
             }
             Console.WriteLine("  a b c d e f g h");
             Console.BackgroundColor = FundoOriginal;

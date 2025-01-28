@@ -10,10 +10,11 @@ namespace Xadrez
             try
             {
                 PartidadeXadres Partida = new PartidadeXadres();
+
                 while (!Partida.Terminada)
                 {
                     Console.Clear();
-                    Tela.ImprimirTAbuleiro(Partida.Tab);
+                    Tela.ImprimirTabuleiro(Partida.Tab);
 
                     Console.WriteLine();
                     Console.Write("Origem: ");
@@ -22,7 +23,7 @@ namespace Xadrez
                     bool[,] PosicaoPossivel = Partida.Tab.peca(Origem).MovimentosPossiveis();
                     
                     Console.Clear();
-                    Tela.ImprimirTAbuleiro(Partida.Tab,PosicaoPossivel);
+                    Tela.ImprimirTabuleiro(Partida.Tab,PosicaoPossivel);
 
 
                     Console.Write("Destino: ");
