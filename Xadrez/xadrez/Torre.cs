@@ -32,7 +32,7 @@ namespace xadrez
                 {
                     break;
                 }
-                Pos.Linha = Pos.Linha - 1;
+                Pos.Linha = Pos.Linha -= 1;
             }
             //Abaixo
             Pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna);
@@ -43,7 +43,7 @@ namespace xadrez
                 {
                     break;
                 }
-                Pos.Linha = Pos.Linha - 1;
+                Pos.Linha = Pos.Linha += 1;
             }
             //Direita
             Pos.DefinirValores(Posicao.Linha, Posicao.Coluna + 1);
@@ -65,7 +65,7 @@ namespace xadrez
                 {
                     break;
                 }
-                Pos.Linha = Pos.Linha - 1;
+                Pos.Linha = Pos.Linha -= 1;
             }
 
 
