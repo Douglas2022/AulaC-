@@ -27,6 +27,7 @@ namespace Xadrez
 
             for (int i = 0; i < Tab.Linhas; i++)
             {
+
                 Console.Write(8 - i + " ");
                 for (int j = 0; j < Tab.Colunas; j++)
                 {
@@ -49,7 +50,7 @@ namespace Xadrez
         {
             string s = Console.ReadLine();
             char coluna = s[0];
-            int linha = int.Parse(s[1].ToString());
+            int linha = int.Parse(s[1] + "");
             return new PosicaoXadrez(coluna, linha);
         }
         public static void ImprimirPeca(Peca peca)
@@ -62,7 +63,7 @@ namespace Xadrez
             {
                 if (peca.Cor == Cor.Branca)
                 {
-                    Console.Write(peca + " ");
+                    Console.Write(peca);
                 }
                 else
                 {
@@ -71,7 +72,7 @@ namespace Xadrez
                     Console.Write(peca + " ");
                     Console.ForegroundColor = aux;
                 }
-                Console.Write("");
+                Console.Write(" ");
             }
 
         }
