@@ -11,10 +11,10 @@ namespace tabuleiro
             Linha = linha;
             Coluna = coluna;
         }
-        public void DefinirValores(int Linha,int Coluna)
+        public void DefinirValores(int linha,int coluna)
         {
-            this.Linha = Linha;
-            this.Coluna = Coluna;   
+            Linha = linha;
+            Coluna = coluna;
         }
        
         public override string ToString()
