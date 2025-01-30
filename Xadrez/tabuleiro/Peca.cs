@@ -24,9 +24,6 @@ namespace tabuleiro
               
         public abstract bool[,] MovimentosPossiveis();
 
-        internal void IncrementaQuantidadeDeMovimentos()
-        {
-            throw new NotImplementedException();
-        }
+        //internal void IncrementaQuantidadeDeMovimentos() => throw new NotImplementedException();
     }
 }

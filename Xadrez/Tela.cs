@@ -27,8 +27,9 @@ namespace Xadrez
 
             for (int i = 0; i < Tab.Linhas; i++)
             {
-
                 Console.Write(8 - i + " ");
+
+
                 for (int j = 0; j < Tab.Colunas; j++)
                 {
                     if (PosicoesPossiveis[i, j])
@@ -69,7 +70,7 @@ namespace Xadrez
                 {
                     ConsoleColor aux = Console.ForegroundColor;
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write(peca + " ");
+                    Console.Write(peca);
                     Console.ForegroundColor = aux;
                 }
                 Console.Write(" ");
