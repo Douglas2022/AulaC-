@@ -15,6 +15,10 @@ namespace tabuleiro
             this.Cor = cor;
             this.QtdeMOvimentos = 0;
         }
+        public void IncrementarQtdeMovimentos()
+        {
+            QtdeMOvimentos++;
+        }
         public abstract bool[,] MovimentosPossiveis();
        
         
