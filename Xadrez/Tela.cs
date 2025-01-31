@@ -41,6 +41,7 @@ namespace Xadrez
                         Console.BackgroundColor = FundoOriginal;
                     }
                     ImprimirPeca(Tab.peca(i, j));
+                    Console.BackgroundColor = FundoOriginal;
                 }
                 Console.WriteLine();
             }

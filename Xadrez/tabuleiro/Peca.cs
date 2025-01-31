@@ -1,6 +1,4 @@
 ﻿
-using System;
-
 namespace tabuleiro
 {
     abstract class Peca
@@ -12,18 +10,13 @@ namespace tabuleiro
 
         public Peca(Tabuleiro tab, Cor cor)
         {
-            Posicao = null;
-            Cor = cor;
-            Tab = tab;
-            QtdeMOvimentos = 0;
+            this.Posicao = null;
+            this.Tab = tab;
+            this.Cor = cor;
+            this.QtdeMOvimentos = 0;
         }
-        public void IncrementarQtdeMovimentos()
-        {
-            QtdeMOvimentos++;
-        }
-              
         public abstract bool[,] MovimentosPossiveis();
-
-        //internal void IncrementaQuantidadeDeMovimentos() => throw new NotImplementedException();
+       
+        
     }
 }

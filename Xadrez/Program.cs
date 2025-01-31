@@ -19,9 +19,11 @@ namespace Xadrez
                     Console.WriteLine();
                     Console.Write("Origem: ");
                     Posicaocs Origem = Tela.LerPosicaoXadrez().ToPosicao();
-                    Console.Clear();
 
                     bool[,] PosicaoPossivel = Partida.Tab.peca(Origem).MovimentosPossiveis();
+
+
+                    Console.Clear();
                     Tela.ImprimirTabuleiro(Partida.Tab, PosicaoPossivel);
 
 
@@ -32,12 +34,12 @@ namespace Xadrez
 
                 }
 
-           /s }
+            }
             catch (TabuleiroException e)
             {
                 Console.WriteLine(e.Message);
             }
             Console.ReadLine();
-  dd      }
+        }
     }
 }
