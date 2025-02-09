@@ -37,6 +37,8 @@ namespace Xadrez
                         Posicaocs Destino = Tela.LerPosicaoXadrez().ToPosicao();
 
                         Partida.RealizaJogada(Origem, Destino);
+
+                        Partida.RealizaJogada(Origem, Destino);
                     }
                     catch(TabuleiroException e)
                     {
