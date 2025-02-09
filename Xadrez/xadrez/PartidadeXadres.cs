@@ -45,9 +45,9 @@ namespace xadrez
                 throw new TabuleiroException("A peca de origem escolhida não é a sua");
             }
 
-            if (Tab.peca(Pos).ExisteMovimentosPossiveis())
+            if (!Tab.peca(Pos).ExisteMovimentosPossiveis())
             {
-
+                throw new TabuleiroException("Não há movimentos para peça de origem escolhido ");
             }
         }
 
