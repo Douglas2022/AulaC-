@@ -24,7 +24,7 @@ namespace xadrez
             Terminada = false;
             Pecas = new HashSet<Peca>();
             Capturadas = new HashSet<Peca>();
-           // ColocarNovaPecas(ColocarNovaPecas);
+            ColocarPecas();
         }
         public void ExecutarMovimento(Posicaocs Origem, Posicaocs Destino)
         {
@@ -32,6 +32,10 @@ namespace xadrez
             P.IncrementarQtdeMovimentos();
             Peca PecaCapturada = Tab.RetirarPeca(Destino);
             Tab.ColocarPeca(P, Destino);
+            if(PecaCapturada != null)
+            {
+                Capturadas.Add(PecaCapturada);
+            }
         }
         public void RealizaJogada(Posicaocs Origem, Posicaocs Destino)
         {
@@ -74,7 +78,9 @@ namespace xadrez
             {
                 JogadorAtual = Cor.Branca;
             }
+            
         }
+       
         public void ColocarNovaPecas(char Coluna, int Linha, Peca peca)
         {
             Tab.ColocarPeca(peca, new PosicaoXadrez(Coluna, Linha).ToPosicao());
