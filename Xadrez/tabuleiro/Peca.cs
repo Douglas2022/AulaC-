@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace tabuleiro
 {
     abstract class Peca
@@ -41,6 +43,11 @@ namespace tabuleiro
        
         
          public abstract bool[,] MovimentosPossiveis();
+
+        internal void Add(Peca peca)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }
