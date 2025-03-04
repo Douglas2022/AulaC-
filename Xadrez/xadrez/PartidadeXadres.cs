@@ -105,7 +105,8 @@ namespace xadrez
         public void ColocarNovaPecas(char Coluna, int Linha, Peca peca)
         {
             Tab.ColocarPeca(peca, new PosicaoXadrez(Coluna, Linha).ToPosicao());
-            peca.Add(peca);
+            Pecas.Add(peca);
+           
         }
         private void ColocarPecas()
         {

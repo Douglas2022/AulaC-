@@ -35,7 +35,7 @@ namespace Xadrez
             {
                 Console.Write( x + " ");
             }
-            Console.Write("}");
+            Console.Write("]");
         }
         public static void ImprimirTabuleiro(Tabuleiro Tab)
         {
