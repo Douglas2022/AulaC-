@@ -40,14 +40,11 @@ namespace tabuleiro
         {
             return MovimentosPossiveis()[Pos.Linha, Pos.Coluna];
         }
-       
-        
-         public abstract bool[,] MovimentosPossiveis();
 
-        internal void Add(Peca peca)
-        {
-            throw new NotImplementedException();
-        }
+
+        public abstract bool[,] MovimentosPossiveis();
+
+        
     }
 
 }

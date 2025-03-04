@@ -19,22 +19,23 @@ namespace Xadrez
         public static void imprimirPecasCapturadas(PartidadeXadres Partida)
         {
             Console.WriteLine("Peças capturadas: ");
-            Console.WriteLine("Peças brancas: ");
+            Console.Write("Peças brancas: ");
             imprimirConjuntos(Partida.pecasCapturadas(Cor.Branca));
 
             Console.WriteLine();
 
-           //Console.WriteLine("Peças capturadas: ");
-            Console.WriteLine("Peças pretas: ");
+            //Console.WriteLine("Peças capturadas: ");
+            Console.Write("Peças pretas: ");
             imprimirConjuntos(Partida.pecasCapturadas(Cor.Preta));
         }
         public static void imprimirConjuntos(HashSet<Peca> Conjunto)
         {
             Console.Write("[");
-            foreach(Peca x in Conjunto)
+            foreach (Peca x in Conjunto)
             {
-                Console.Write("]");
+                Console.Write( x + " ");
             }
+            Console.Write("}");
         }
         public static void ImprimirTabuleiro(Tabuleiro Tab)
         {
@@ -44,7 +45,7 @@ namespace Xadrez
                 for (int j = 0; j < Tab.Colunas; j++)
                 {
                     ImprimirPeca(Tab.peca(i, j));
-                   
+
                 }
                 Console.WriteLine();
             }
