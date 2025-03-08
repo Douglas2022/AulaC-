@@ -23,10 +23,13 @@ namespace Xadrez
             imprimirConjuntos(Partida.pecasCapturadas(Cor.Branca));
 
             Console.WriteLine();
-
             //Console.WriteLine("Peças capturadas: ");
             Console.Write("Peças pretas: ");
+            ConsoleColor aux = Console.ForegroundColor;                     
+            Console.ForegroundColor = ConsoleColor.Yellow;
             imprimirConjuntos(Partida.pecasCapturadas(Cor.Preta));
+            Console.ForegroundColor = aux;
+            Console.WriteLine();
         }
         public static void imprimirConjuntos(HashSet<Peca> Conjunto)
         {
