@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Security.Authentication;
 using tabuleiro;
+
 
 namespace xadrez
 {

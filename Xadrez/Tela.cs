@@ -19,18 +19,19 @@ namespace Xadrez
         public static void imprimirPecasCapturadas(PartidadeXadres Partida)
         {
             Console.WriteLine("Peças capturadas: ");
-            Console.Write("Peças brancas: ");
+            Console.Write("Brancas");
             imprimirConjuntos(Partida.pecasCapturadas(Cor.Branca));
-
             Console.WriteLine();
-            //Console.WriteLine("Peças capturadas: ");
-            Console.Write("Peças pretas: ");
-            ConsoleColor aux = Console.ForegroundColor;                     
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("Pretas: ");
+            ConsoleColor aux = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Blue;
             imprimirConjuntos(Partida.pecasCapturadas(Cor.Preta));
             Console.ForegroundColor = aux;
             Console.WriteLine();
+
         }
+
+
         public static void imprimirConjuntos(HashSet<Peca> Conjunto)
         {
             Console.Write("[");
@@ -57,7 +58,7 @@ namespace Xadrez
         public static void ImprimirTabuleiro(Tabuleiro Tab, bool[,] PosicoesPossiveis)
         {
             ConsoleColor FundoOriginal = Console.BackgroundColor;
-            ConsoleColor FundoAlterado = ConsoleColor.DarkGray;
+            ConsoleColor FundoAlterado = ConsoleColor.DarkGreen;
 
             for (int i = 0; i < Tab.Linhas; i++)
             {
@@ -111,6 +112,11 @@ namespace Xadrez
                 Console.Write(" ");
             }
 
+        }
+
+        internal static void imprimirPartida(Tabuleiro tab)
+        {
+            throw new NotImplementedException();
         }
     }
 

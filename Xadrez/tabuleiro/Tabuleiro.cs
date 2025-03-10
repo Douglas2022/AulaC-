@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.SymbolStore;
+﻿//System.Diagnostics.SymbolStore;
+using System.Globalization;
 
 namespace tabuleiro
 {

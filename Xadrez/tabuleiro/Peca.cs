@@ -1,6 +1,4 @@
-﻿
-using System;
-
+﻿using System;
 namespace tabuleiro
 {
     abstract class Peca
@@ -40,11 +38,8 @@ namespace tabuleiro
         {
             return MovimentosPossiveis()[Pos.Linha, Pos.Coluna];
         }
-
-
         public abstract bool[,] MovimentosPossiveis();
 
-        
     }
 
 }
