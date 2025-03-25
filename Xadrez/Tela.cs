@@ -114,10 +114,7 @@ namespace Xadrez
 
         }
 
-        internal static void imprimirPartida(Tabuleiro tab)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 
 }
