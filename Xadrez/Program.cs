@@ -25,7 +25,7 @@ namespace Xadrez
                     Posicaocs Origem = Tela.LerPosicaoXadrez().ToPosicao();
                     Partida.ValidarPosicaoDeOrigem(Origem);
 
-                    bool[,] posicoesPossiveis = Partida.Tab.peca(Origem).MovimentosPossiveis();
+                    bool[,] posicoesPossiveis = Partida.Tab.peca(Origem).movimentosPossiveis();
 
                     Console.Clear();
                     Tela.ImprimirTabuleiro(Partida.Tab, posicoesPossiveis);
@@ -46,10 +46,12 @@ namespace Xadrez
             }
 
 
-        }
 
+        }
+         
 
     }
+          
     
 
 }

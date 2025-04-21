@@ -18,7 +18,7 @@ namespace xadrez
             return P == null || P.Cor != Cor;
 
         }
-        public override bool[,] MovimentosPossiveis()
+        public override bool[,] movimentosPossiveis()
         {
             bool[,] Mat = new bool[Tab.Linhas, Tab.Colunas];
 
