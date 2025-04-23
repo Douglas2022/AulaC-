@@ -38,6 +38,7 @@ namespace Xadrez
                     Partida.RealizaJogada(Origem, Destino);
 
                 }
+
             }
             catch (TabuleiroException e)
             {
@@ -45,10 +46,10 @@ namespace Xadrez
                 Console.ReadLine();
             }
 
-
+            
 
         }
-         
+
 
     }
           
