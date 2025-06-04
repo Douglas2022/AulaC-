@@ -14,21 +14,10 @@ namespace Xadrez
             imprimirPecasCapturadas(Partida);
             Console.WriteLine();
             Console.WriteLine("Turno: " + Partida.Turno);
-            if (!Partida.Terminada)
-            {
-                Console.WriteLine("Aguardando jogada: " + Partida.JogadorAtual);
-                if (Partida.Xeque)
-                {
-                    Console.WriteLine("XEQUE!");
-                }
-
+            Console.WriteLine("Aguardando a jogada: " + Partida.JogadorAtual);
+            if (!Partida.Xeque) {
+                Console.WriteLine("XEQUE!");
             }
-            else
-            {
-                Console.WriteLine("XEQUEMATE!");
-                Console.WriteLine("Vencedor: " + Partida.JogadorAtual);
-            }
-
            
         }
         public static void imprimirPecasCapturadas(PartidadeXadres Partida)
@@ -102,7 +91,7 @@ namespace Xadrez
         {
             string s = Console.ReadLine();
             var coluna = s[0];
-            int linha = int.Parse(s[1] + " ");
+            int linha = int.Parse(s[1].ToString());
             return new PosicaoXadrez(coluna, linha);
         }
         public static void ImprimirPeca(Peca peca)
