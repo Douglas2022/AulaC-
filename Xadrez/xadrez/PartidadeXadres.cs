@@ -75,14 +75,12 @@ namespace xadrez
                 MudaJogador();
             }
 
-
-
         }
         public void ValidarPosicaoDeOrigem(Posicaocs Pos)
         {
             if (Tab.peca(Pos) == null)
             {
-                throw new TabuleiroException("Não existe peça na posição de origem");
+                throw new TabuleiroException("Não existe peça na posição de origem escolhida");
             }
 
             if (JogadorAtual != Tab.peca(Pos).Cor)
@@ -92,7 +90,7 @@ namespace xadrez
 
             if (!Tab.peca(Pos).existeMovimentosPossiveis())
             {
-                throw new TabuleiroException("Não há movimentos possiveis para peça de origem escolhido ");
+                throw new TabuleiroException("Não há movimentos possíveis para peça de origem escolhido ");
             }
         }
         public void ValidarPosicaoDeDestino(Posicaocs Origem, Posicaocs Destino)
@@ -102,7 +100,6 @@ namespace xadrez
                 throw new TabuleiroException("Posição de destino inválida");
             }
         }
-
         private void MudaJogador()
         {
             if (JogadorAtual == Cor.Branca)
@@ -184,7 +181,7 @@ namespace xadrez
         }
         public bool testeXequemate(Cor cor)
         {
-            if (!testeXequemate(cor))
+            if (!estarEmXeque(cor))
             {
                 return false;
             }
@@ -198,7 +195,7 @@ namespace xadrez
                         if (mat[i, j])
                         {
                             Posicaocs destino = new Posicaocs(i, j);
-                            Peca pecaCapturadas = ExecutarMovimento(x.Posicao, new Posicaocs(i, j));
+                            Peca pecaCapturadas = ExecutarMovimento(x.Posicao,destino);
                             bool testeXeque = estarEmXeque(cor);
                             desfazMovimento(x.Posicao, destino, pecaCapturadas);
                             if (!testeXeque)
