@@ -46,12 +46,15 @@ namespace Xadrez
                         Console.ReadLine();
                     }
                 }
-              
+                Console.Clear();
+                Tela.imprimirPartida(partida);
+
             }
             catch (TabuleiroException e)
             {
-                Console.WriteLine("Erro na aplicação: " + e.Message);
+                Console.WriteLine(e.Message);
             }
+            Console.ReadLine();
         }
     }
 }
