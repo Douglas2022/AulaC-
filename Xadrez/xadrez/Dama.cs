@@ -40,8 +40,9 @@ class Dama : Peca
             mat[pos.Linha, pos.Coluna] = true;
             if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor)
                 break;
-            pos.DefinirValores(pos.Linha, pos.Coluna + 1);
+           
         }
+        pos.DefinirValores(pos.Linha, pos.Coluna + 1);
 
         // Acima
         pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna);
@@ -50,8 +51,9 @@ class Dama : Peca
             mat[pos.Linha, pos.Coluna] = true;
             if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor)
                 break;
-            pos.DefinirValores(pos.Linha - 1, pos.Coluna);
+           
         }
+        pos.DefinirValores(pos.Linha - 1, pos.Coluna);
 
         // Abaixo
         pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna);
@@ -60,8 +62,9 @@ class Dama : Peca
             mat[pos.Linha, pos.Coluna] = true;
             if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor)
                 break;
-            pos.DefinirValores(pos.Linha + 1, pos.Coluna);
+           
         }
+        pos.DefinirValores(pos.Linha + 1, pos.Coluna);
 
         // NO
         pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna - 1);
@@ -70,8 +73,9 @@ class Dama : Peca
             mat[pos.Linha, pos.Coluna] = true;
             if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor)
                 break;
-            pos.DefinirValores(pos.Linha - 1, pos.Coluna - 1);
+           
         }
+        pos.DefinirValores(pos.Linha - 1, pos.Coluna - 1);
 
         // NE
         pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna + 1);
@@ -80,8 +84,9 @@ class Dama : Peca
             mat[pos.Linha, pos.Coluna] = true;
             if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor)
                 break;
-            pos.DefinirValores(pos.Linha - 1, pos.Coluna + 1);
+            
         }
+        pos.DefinirValores(pos.Linha - 1, pos.Coluna + 1);
 
         //SE
         pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna + 1);
@@ -90,8 +95,9 @@ class Dama : Peca
             mat[pos.Linha, pos.Coluna] = true;
             if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor)
                 break;
-            pos.DefinirValores(pos.Linha + 1, pos.Coluna + 1);
+            
         }
+        pos.DefinirValores(pos.Linha + 1, pos.Coluna + 1);
 
         // SO
         pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna - 1);
@@ -100,8 +106,9 @@ class Dama : Peca
             mat[pos.Linha, pos.Coluna] = true;
             if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor)
                 break;
-            pos.DefinirValores(pos.Linha + 1, pos.Coluna - 1);
+           
         }
+        pos.DefinirValores(pos.Linha + 1, pos.Coluna - 1);
 
         return mat;
     }

@@ -6,7 +6,7 @@ namespace Xadrez.xadrez
 {
     internal class Peao : Peca
     {
-        public Peao(tabuleiro tab, Cor cor) : base(tab, cor)
+        public Peao(Tabuleiro tab, Cor cor) : base(tab, cor)
         {
 
         }
@@ -55,7 +55,7 @@ namespace Xadrez.xadrez
             else
             {
                 pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna);
-                if(Tab.PosicaoValida(pos) && Livre(pos))
+                if (Tab.PosicaoValida(pos) && Livre(pos))
                 {
                     mat[pos.Linha, pos.Coluna] = true;
                 }
@@ -64,8 +64,19 @@ namespace Xadrez.xadrez
                 {
                     mat[pos.Linha, pos.Coluna] = true;
                 }
+                pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna - 1);
+                if (Tab.PosicaoValida(pos) && existeInimigo(pos))
+                {
+                    mat[pos.Linha, pos.Coluna] = true;
+                }
+                pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna + 1);
+                if (Tab.PosicaoValida(pos) && existeInimigo(pos))
+                {
+                    mat[pos.Linha, pos.Coluna] = true;
 
+                }
             }
+            return mat;
         }
     }
 }
