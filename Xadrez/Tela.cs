@@ -17,14 +17,14 @@ namespace Xadrez
             if (!Partida.Terminada)
             {
                 Console.WriteLine("Aguardando a jogada: " + Partida.JogadorAtual);
-                if (!Partida.Xeque)
+                if (Partida.Xeque)
                 {
                     Console.WriteLine("XEQUE!");
                 }
             }
             else
             {
-                Console.WriteLine("XEQUE!");
+                Console.WriteLine("XEQUEMATE!");
                 Console.WriteLine("Vencedor: " + Partida.JogadorAtual);
             }
         }
@@ -42,14 +42,12 @@ namespace Xadrez
             Console.WriteLine();
 
         }
-
-
         public static void imprimirConjuntos(HashSet<Peca> Conjunto)
         {
             Console.Write("[");
             foreach (Peca x in Conjunto)
             {
-                Console.Write( x + " ");
+                Console.Write(x + " ");
             }
             Console.Write("]");
         }
@@ -75,8 +73,6 @@ namespace Xadrez
             for (int i = 0; i < Tab.Linhas; i++)
             {
                 Console.Write(8 - i + " ");
-
-
                 for (int j = 0; j < Tab.Colunas; j++)
                 {
                     if (PosicoesPossiveis[i, j])

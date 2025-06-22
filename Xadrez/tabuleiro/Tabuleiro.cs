@@ -1,6 +1,4 @@
 ﻿//System.Diagnostics.SymbolStore;
-using System.Globalization;
-
 namespace tabuleiro
 {
     internal class Tabuleiro
@@ -40,21 +38,21 @@ namespace tabuleiro
         }
         public Peca RetirarPeca(Posicaocs Pos)
         {
-            if(peca(Pos) == null)
+            if (peca(Pos) == null)
             {
                 return null;
             }
             Peca aux = peca(Pos);
             aux.Posicao = null;
-            pecas[Pos.Linha,Pos.Coluna] = null;
+            pecas[Pos.Linha, Pos.Coluna] = null;
             return aux;
         }
         public bool PosicaoValida(Posicaocs Pos)
         {
-            if(Pos.Linha < 0||Pos.Linha >= Linhas || Pos.Coluna <= 0|| Pos.Coluna >= Colunas)
+            if (Pos.Linha < 0 || Pos.Linha >= Linhas || Pos.Coluna < 0 || Pos.Coluna >= Colunas)
             {
                 return false;
-            } 
+            }
             return true;
         }
         public void ValidarPosicao(Posicaocs Pos)

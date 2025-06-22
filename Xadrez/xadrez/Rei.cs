@@ -23,7 +23,7 @@ namespace xadrez
             Posicaocs Pos = new Posicaocs(0, 0);
 
             // Acima
-            Pos.DefinirValores(Posicao.Linha -1,Posicao.Coluna);
+            Pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna);
             if (Tab.PosicaoValida(Pos) && PodeMover(Pos))
             {
                 mat[Pos.Linha, Pos.Coluna] = true;

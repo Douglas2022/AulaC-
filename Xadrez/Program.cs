@@ -53,8 +53,10 @@ namespace Xadrez
             catch (TabuleiroException e)
             {
                 Console.WriteLine(e.Message);
+
             }
             Console.ReadLine();
+
         }
     }
 }

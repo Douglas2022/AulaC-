@@ -1,11 +1,10 @@
-﻿using System;
-using tabuleiro;
+﻿using tabuleiro;
 
 namespace Xadrez.xadrez
 {
     class Cavalo : Peca
     {
-        public Cavalo(Tabuleiro tab,Cor cor) : base(tab,cor)
+        public Cavalo(Tabuleiro tab, Cor cor) : base(tab, cor)
         {
 
         }
@@ -26,37 +25,60 @@ namespace Xadrez.xadrez
 
             pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna - 2);
             if (Tab.PosicaoValida(pos) && podeMover(pos))
+            {
                 mat[pos.Linha, pos.Coluna] = true;
+            }
 
             pos.DefinirValores(Posicao.Linha - 2, Posicao.Coluna - 1);
             if (Tab.PosicaoValida(pos) && podeMover(pos))
+            {
                 mat[pos.Linha, pos.Coluna] = true;
+            }
+
 
             pos.DefinirValores(Posicao.Linha - 2, Posicao.Coluna + 1);
             if (Tab.PosicaoValida(pos) && podeMover(pos))
+            {
                 mat[pos.Linha, pos.Coluna] = true;
+            }
+
 
             pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna + 2);
             if (Tab.PosicaoValida(pos) && podeMover(pos))
+            {
                 mat[pos.Linha, pos.Coluna] = true;
+            }
+
 
             pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna + 2);
             if (Tab.PosicaoValida(pos) && podeMover(pos))
+            {
                 mat[pos.Linha, pos.Coluna] = true;
+            }
+
 
             pos.DefinirValores(Posicao.Linha + 2, Posicao.Coluna + 1);
             if (Tab.PosicaoValida(pos) && podeMover(pos))
+            {
                 mat[pos.Linha, pos.Coluna] = true;
+            }
+
 
             pos.DefinirValores(Posicao.Linha + 2, Posicao.Coluna - 1);
             if (Tab.PosicaoValida(pos) && podeMover(pos))
+            {
                 mat[pos.Linha, pos.Coluna] = true;
+            }
+
 
             pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna - 2);
             if (Tab.PosicaoValida(pos) && podeMover(pos))
+            {
                 mat[pos.Linha, pos.Coluna] = true;
-
+            }
             return mat;
+
+
         }
 
     }

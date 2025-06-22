@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using tabuleiro;
 using Xadrez.xadrez;
 
@@ -67,7 +66,8 @@ namespace xadrez
             {
                 Xeque = false;
             }
-            if (testeXequemate(Adversaria(JogadorAtual))){
+            if (testeXequemate(Adversaria(JogadorAtual)))
+            {
                 Terminada = true;
             }
             else
@@ -197,19 +197,21 @@ namespace xadrez
                         {
                             Posicaocs origem = x.Posicao;
                             Posicaocs destino = new Posicaocs(i, j);
-                            Peca pecaCapturadas = ExecutarMovimento(origem,destino);
+                            Peca pecaCapturadas = ExecutarMovimento(origem, destino);
                             bool testeXeque = estarEmXeque(cor);
                             desfazMovimento(origem, destino, pecaCapturadas);
                             if (!testeXeque)
                             {
                                 return false;
                             }
+
                         }
                     }
                 }
             }
             return true;
         }
+
         public void ColocarNovaPecas(char Coluna, int Linha, Peca peca)
         {
             Tab.ColocarPeca(peca, new PosicaoXadrez(Coluna, Linha).ToPosicao());
@@ -252,7 +254,7 @@ namespace xadrez
             ColocarNovaPecas('f', 7, new Peao(Tab, Cor.Preta));
             ColocarNovaPecas('g', 7, new Peao(Tab, Cor.Preta));
             ColocarNovaPecas('h', 7, new Peao(Tab, Cor.Preta));
-            
+
         }
 
     }
