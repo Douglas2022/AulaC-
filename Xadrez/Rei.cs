@@ -89,7 +89,19 @@ namespace xadrez
                     Posicaocs p2 = new Posicaocs(Posicao.Linha, Posicao.Coluna + 2);
                     if(Tab.peca(p1) == null && Tab.peca(p2) == null)
                     {
-                        mat[Posicao.Linha,Posicao.Coluna] = true;
+                        mat[Posicao.Linha,Posicao.Coluna +2] = true;
+                    }
+                }
+                //Jogada especial roque grande
+                Posicaocs posT2 = new Posicaocs(Posicao.Linha, Posicao.Coluna + 4);
+                if (testePraRoque(posT2))
+                {
+                    Posicaocs p1 = new Posicaocs(Posicao.Linha, Posicao.Coluna - 1);
+                    Posicaocs p2 = new Posicaocs(Posicao.Linha, Posicao.Coluna - 2);
+                    Posicaocs p3 = new Posicaocs(Posicao.Linha, Posicao.Coluna - 3);
+                    if (Tab.peca(p1) == null && Tab.peca(p2) == null && Tab.peca(p3) == null)
+                    {
+                        mat[Posicao.Linha, Posicao.Coluna -2] = true;
                     }
                 }
             }
