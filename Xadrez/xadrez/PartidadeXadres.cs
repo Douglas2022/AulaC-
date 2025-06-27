@@ -76,7 +76,7 @@ namespace xadrez
                 Tab.ColocarPeca(T,origemT);
             }
             //# Jogada especial roque grande
-            if (P is Rei && Destino.Coluna == Origem.Coluna + 2)
+            if (p is Rei && Destino.Coluna == Origem.Coluna + 2)
             {
                 Posicaocs origemT = new Posicaocs(Origem.Linha, Origem.Coluna - 4);
                 Posicaocs destinoT = new Posicaocs(Origem.Linha, Origem.Coluna - 1);
@@ -261,7 +261,7 @@ namespace xadrez
             ColocarNovaPecas('b', 1, new Cavalo(Tab, Cor.Branca));
             ColocarNovaPecas('c', 1, new Bispo(Tab, Cor.Branca));
             ColocarNovaPecas('d', 1, new Dama(Tab, Cor.Branca));
-            ColocarNovaPecas('e', 1, new Rei(Tab, Cor.Branca));
+            ColocarNovaPecas('e', 1, new Rei(Tab, Cor.Branca,this));
             ColocarNovaPecas('f', 1, new Bispo(Tab, Cor.Branca));
             ColocarNovaPecas('g', 1, new Cavalo(Tab, Cor.Branca));
             ColocarNovaPecas('h', 1, new Torre(Tab, Cor.Branca));
@@ -278,7 +278,7 @@ namespace xadrez
             ColocarNovaPecas('b', 8, new Cavalo(Tab, Cor.Preta));
             ColocarNovaPecas('c', 8, new Bispo(Tab, Cor.Preta));
             ColocarNovaPecas('d', 8, new Dama(Tab, Cor.Preta));
-            ColocarNovaPecas('e', 8, new Rei(Tab, Cor.Preta));
+            ColocarNovaPecas('e', 8, new Rei(Tab, Cor.Preta,this));
             ColocarNovaPecas('f', 8, new Bispo(Tab, Cor.Preta));
             ColocarNovaPecas('g', 8, new Cavalo(Tab, Cor.Preta));
             ColocarNovaPecas('h', 8, new Torre(Tab, Cor.Preta));
