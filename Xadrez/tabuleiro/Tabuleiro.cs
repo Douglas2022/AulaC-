@@ -19,6 +19,7 @@ namespace tabuleiro
         }
         public Peca peca(Posicaocs pos)
         {
+            ValidarPosicao(pos);
             return pecas[pos.Linha, pos.Coluna];
         }
         public bool ExistePeca(Posicaocs Pos)

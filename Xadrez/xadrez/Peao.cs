@@ -29,21 +29,29 @@ namespace Xadrez.xadrez
 
             if (Cor == Cor.Branca)
             {
+                // Uma casa à frente
                 pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna);
                 if (Tab.PosicaoValida(pos) && Livre(pos))
                 {
                     mat[pos.Linha, pos.Coluna] = true;
                 }
-                pos.DefinirValores(Posicao.Linha - 2, Posicao.Coluna);
-                if (Tab.PosicaoValida(pos) && Livre(pos) && QtdeMOvimentos == 0)
+
+                // Duas casas à frente
+                Posicaocs pos2 = new Posicaocs(Posicao.Linha - 2, Posicao.Coluna);
+                Posicaocs pos1 = new Posicaocs(Posicao.Linha - 1, Posicao.Coluna);
+                if (Tab.PosicaoValida(pos2) && Livre(pos2) && Livre(pos1) && QtdeMOvimentos == 0)
                 {
-                    mat[pos.Linha, pos.Coluna] = true;
+                    mat[pos2.Linha, pos2.Coluna] = true;
                 }
+
+                // Captura à esquerda
                 pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna - 1);
                 if (Tab.PosicaoValida(pos) && existeInimigo(pos))
                 {
                     mat[pos.Linha, pos.Coluna] = true;
                 }
+
+                // Captura à direita
                 pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna + 1);
                 if (Tab.PosicaoValida(pos) && existeInimigo(pos))
                 {
@@ -52,29 +60,39 @@ namespace Xadrez.xadrez
             }
             else
             {
+                // Uma casa à frente
                 pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna);
                 if (Tab.PosicaoValida(pos) && Livre(pos))
                 {
                     mat[pos.Linha, pos.Coluna] = true;
                 }
-                pos.DefinirValores(Posicao.Linha + 2, Posicao.Coluna);
-                if (Tab.PosicaoValida(pos) && Livre(pos) && QtdeMOvimentos == 0)
+
+                // Duas casas à frente
+                Posicaocs pos2 = new Posicaocs(Posicao.Linha + 2, Posicao.Coluna);
+                Posicaocs pos1 = new Posicaocs(Posicao.Linha + 1, Posicao.Coluna);
+                if (Tab.PosicaoValida(pos2) && Livre(pos2) && Livre(pos1) && QtdeMOvimentos == 0)
                 {
-                    mat[pos.Linha, pos.Coluna] = true;
+                    mat[pos2.Linha, pos2.Coluna] = true;
                 }
+
+                // Captura à esquerda
                 pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna - 1);
                 if (Tab.PosicaoValida(pos) && existeInimigo(pos))
                 {
                     mat[pos.Linha, pos.Coluna] = true;
                 }
+
+                // Captura à direita
                 pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna + 1);
                 if (Tab.PosicaoValida(pos) && existeInimigo(pos))
                 {
                     mat[pos.Linha, pos.Coluna] = true;
-
                 }
             }
+
             return mat;
         }
+
     }
 }
+

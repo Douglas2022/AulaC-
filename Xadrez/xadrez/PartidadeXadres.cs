@@ -76,7 +76,7 @@ namespace xadrez
                 Tab.ColocarPeca(T,origemT);
             }
             //# Jogada especial roque grande
-            if (p is Rei && Destino.Coluna == Origem.Coluna + 2)
+            if (p is Rei && Destino.Coluna == Origem.Coluna - 2)
             {
                 Posicaocs origemT = new Posicaocs(Origem.Linha, Origem.Coluna - 4);
                 Posicaocs destinoT = new Posicaocs(Origem.Linha, Origem.Coluna - 1);
