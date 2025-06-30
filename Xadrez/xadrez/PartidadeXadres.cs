@@ -14,6 +14,7 @@ namespace xadrez
         private HashSet<Peca> Pecas;
         private HashSet<Peca> Capturadas;
         public bool Xeque { get; private set; }
+        private Peca vuneravelEnPassant;
 
         public PartidadeXadres()
         {
@@ -22,6 +23,7 @@ namespace xadrez
             JogadorAtual = Cor.Branca;
             Terminada = false;
             Xeque = false;
+            vuneravelEnPassant = null;  
             Pecas = new HashSet<Peca>();
             Capturadas = new HashSet<Peca>();
             ColocarPecas();
@@ -100,18 +102,19 @@ namespace xadrez
             }
             else
             {
-                Xeque = false;
-            }
-            if (testeXequemate(Adversaria(JogadorAtual)))
-            {
-                Terminada = true;
-            }
-            else
-            {
                 Turno++;
                 MudaJogador();
             }
-
+            Peca p = Tab.peca(Destino);
+            //Jogada especial passant
+            if (p is Peao && (Destino.Linha == Origem.Linha - 2 || Destino.Linha == Origem.Linha + 2))
+            {
+                vuneravelEnPassant = p;
+            }
+            else
+            {
+                vuneravelEnPassant = null;
+            }
         }
         public void ValidarPosicaoDeOrigem(Posicaocs Pos)
         {

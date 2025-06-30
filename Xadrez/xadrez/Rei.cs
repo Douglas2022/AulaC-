@@ -1,4 +1,5 @@
 ﻿using tabuleiro;
+
 namespace xadrez
 {
     internal class Rei : Peca
@@ -8,6 +9,7 @@ namespace xadrez
         public Rei(Tabuleiro tab, Cor cor, PartidadeXadres partida) : base(tab, cor)
         {
             this.partida = partida;
+            
         }
 
         public override string ToString()
@@ -15,10 +17,10 @@ namespace xadrez
             return "R";
         }
 
-        private bool PodeMover(Posicaocs Pos)
+        private bool PodeMover(Posicaocs pos)
         {
-            Peca P = Tab.peca(Pos);
-            return P == null || P.Cor != Cor;
+            Peca p = Tab.peca(pos);
+            return p == null || p.Cor != Cor;
         }
 
         private bool testeTorrePraRoque(Posicaocs pos)
@@ -30,64 +32,68 @@ namespace xadrez
         public override bool[,] movimentosPossiveis()
         {
             bool[,] mat = new bool[Tab.Linhas, Tab.Colunas];
-            Posicaocs Pos = new Posicaocs(0, 0);
+            Posicaocs pos = new Posicaocs(0, 0);
 
             // Acima
-            Pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna);
-            if (Tab.PosicaoValida(Pos) && PodeMover(Pos))
+            pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna);
+            if (Tab.PosicaoValida(pos) && PodeMover(pos))
             {
-                mat[Pos.Linha, Pos.Coluna] = true;
+                mat[pos.Linha, pos.Coluna] = true;
             }
 
             // Nordeste
-            Pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna + 1);
-            if (Tab.PosicaoValida(Pos) && PodeMover(Pos))
+            pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna + 1);
+            if (Tab.PosicaoValida(pos) && PodeMover(pos))
             {
-                mat[Pos.Linha, Pos.Coluna] = true;
-
+                mat[pos.Linha, pos.Coluna] = true;
             }
+
             // Direita
-            Pos.DefinirValores(Posicao.Linha, Posicao.Coluna + 1);
-            if (Tab.PosicaoValida(Pos) && PodeMover(Pos))
+            pos.DefinirValores(Posicao.Linha, Posicao.Coluna + 1);
+            if (Tab.PosicaoValida(pos) && PodeMover(pos))
             {
-                mat[Pos.Linha, Pos.Coluna] = true;
+                mat[pos.Linha, pos.Coluna] = true;
             }
 
             // Sudeste
-            Pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna + 1);
-            if (Tab.PosicaoValida(Pos) && PodeMover(Pos))
+            pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna + 1);
+            if (Tab.PosicaoValida(pos) && PodeMover(pos))
             {
-                mat[Pos.Linha, Pos.Coluna] = true;
-            }
-            // Abaixo
-            Pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna);
-            if (Tab.PosicaoValida(Pos) && PodeMover(Pos))
-            {
-                mat[Pos.Linha, Pos.Coluna] = true;
-            }
-            // Sudoeste
-            Pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna - 1);
-            if (Tab.PosicaoValida(Pos) && PodeMover(Pos))
-            {
-                mat[Pos.Linha, Pos.Coluna] = true;
-            }
-            // Esquerda
-            Pos.DefinirValores(Posicao.Linha, Posicao.Coluna - 1);
-            if (Tab.PosicaoValida(Pos) && PodeMover(Pos))
-            {
-                mat[Pos.Linha, Pos.Coluna] = true;
-            }
-            // Noroeste
-            Pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna - 1);
-            if (Tab.PosicaoValida(Pos) && PodeMover(Pos))
-            {
-                mat[Pos.Linha, Pos.Coluna] = true;
+                mat[pos.Linha, pos.Coluna] = true;
             }
 
-            //#JogadaEspecial roque pequeno
-            if (qtdeMovimentos == 0 && !partida.xeque)
+            // Abaixo
+            pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna);
+            if (Tab.PosicaoValida(pos) && PodeMover(pos))
             {
-                // Roque pequeno (torre à direita)
+                mat[pos.Linha, pos.Coluna] = true;
+            }
+
+            // Sudoeste
+            pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna - 1);
+            if (Tab.PosicaoValida(pos) && PodeMover(pos))
+            {
+                mat[pos.Linha, pos.Coluna] = true;
+            }
+
+            // Esquerda
+            pos.DefinirValores(Posicao.Linha, Posicao.Coluna - 1);
+            if (Tab.PosicaoValida(pos) && PodeMover(pos))
+            {
+                mat[pos.Linha, pos.Coluna] = true;
+            }
+
+            // Noroeste
+            pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna - 1);
+            if (Tab.PosicaoValida(pos) && PodeMover(pos))
+            {
+                mat[pos.Linha, pos.Coluna] = true;
+            }
+
+            // Jogada especial Roque pequeno e grande
+            if (qtdeMovimentos == 0 && !partida.Xeque)
+            {
+                // Roque pequeno
                 Posicaocs posTorre1 = new Posicaocs(Posicao.Linha, Posicao.Coluna + 3);
                 if (testeTorrePraRoque(posTorre1))
                 {
@@ -99,23 +105,34 @@ namespace xadrez
                     }
                 }
 
-                // Roque grande (torre à esquerda)
-                Posicaocs posTorre2 = new Posicaocs(Posicao.Linha, Posicao.Coluna - 4);
-                if (testeTorrePraRoque(posTorre2))
+                // Jogada especial Roque pequeno e grande
+                if (qtdeMovimentos == 0 && !partida.Xeque)
                 {
-                    Posicaocs p1 = new Posicaocs(Posicao.Linha, Posicao.Coluna - 1);
-                    Posicaocs p2 = new Posicaocs(Posicao.Linha, Posicao.Coluna - 2);
-                    Posicaocs p3 = new Posicaocs(Posicao.Linha, Posicao.Coluna - 3);
-                    if (Tab.peca(p1) == null && Tab.peca(p2) == null && Tab.peca(p3) == null)
+                    // Roque pequeno
+                    Posicaocs posTorre1 = new Posicaocs(Posicao.Linha, Posicao.Coluna + 3);
+                    if (testeTorrePraRoque(posTorre1))
                     {
-                        mat[Posicao.Linha, Posicao.Coluna - 2] = true;
+                        Posicaocs p1 = new Posicaocs(Posicao.Linha, Posicao.Coluna + 1);
+                        Posicaocs p2 = new Posicaocs(Posicao.Linha, Posicao.Coluna + 2);
+                        if (Tab.peca(p1) == null && Tab.peca(p2) == null)
+                        {
+                            mat[Posicao.Linha, Posicao.Coluna + 2] = true;
+                        }
+                    }
+
+                    // Roque grande
+                    Posicaocs posTorre2 = new Posicaocs(Posicao.Linha, Posicao.Coluna - 4);
+                    if (testeTorrePraRoque(posTorre2))
+                    {
+                        Posicaocs p1 = new Posicaocs(Posicao.Linha, Posicao.Coluna - 1);
+                        Posicaocs p2 = new Posicaocs(Posicao.Linha, Posicao.Coluna - 2);
+                        Posicaocs p3 = new Posicaocs(Posicao.Linha, Posicao.Coluna - 3);
+                        if (Tab.peca(p1) == null && Tab.peca(p2) == null && Tab.peca(p3) == null)
+                        {
+                            mat[Posicao.Linha, Posicao.Coluna - 2] = true;
+                        }
                     }
                 }
+
+                return mat;
             }
-
-            return mat;
-        }
-    }
-}
-
-

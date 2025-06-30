@@ -1,4 +1,6 @@
 ﻿//System.Diagnostics.SymbolStore;
+using tabuleiro;
+
 namespace tabuleiro
 {
     internal class Tabuleiro
