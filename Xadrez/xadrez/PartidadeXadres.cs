@@ -14,7 +14,7 @@ namespace xadrez
         private HashSet<Peca> Pecas;
         private HashSet<Peca> Capturadas;
         public bool Xeque { get; private set; }
-        private Peca vuneravelEnPassant;
+        public Peca vuneravelEnPassant;
 
         public PartidadeXadres()
         {

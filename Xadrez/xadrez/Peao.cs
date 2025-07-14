@@ -1,12 +1,14 @@
 ﻿using tabuleiro;
+using xadrez;
 
 namespace Xadrez.xadrez
 {
     internal class Peao : Peca
     {
-        public Peao(Tabuleiro tab, Cor cor) : base(tab, cor)
+        private PartidadeXadres partidade;
+        public Peao(Tabuleiro tab, Cor cor,PartidadeXadres partidade) : base(tab, cor)
         {
-
+            this.partidade = partidade;     .
         }
         public override string ToString()
         {
@@ -35,13 +37,10 @@ namespace Xadrez.xadrez
                 {
                     mat[pos.Linha, pos.Coluna] = true;
                 }
-
-                // Duas casas à frente
-                Posicaocs pos2 = new Posicaocs(Posicao.Linha - 2, Posicao.Coluna);
-                Posicaocs pos1 = new Posicaocs(Posicao.Linha - 1, Posicao.Coluna);
-                if (Tab.PosicaoValida(pos2) && Livre(pos2) && Livre(pos1) && QtdeMOvimentos == 0)
+                pos.DefinirValores(Posicao.Linha -2,Posicao.Coluna);
+                if (Tab.PosicaoValida(pos) && Livre(pos) && Livre(pos) && QtdeMOvimentos == 0)
                 {
-                    mat[pos2.Linha, pos2.Coluna] = true;
+                    mat[pos.Linha, pos.Coluna] = true;
                 }
 
                 // Captura à esquerda
@@ -57,6 +56,20 @@ namespace Xadrez.xadrez
                 {
                     mat[pos.Linha, pos.Coluna] = true;
                 }
+                // #Jogada en passant
+                if(Posicao.Linha == 3)
+                {
+                   Posicaocs esquerda = new Posicaocs(Posicao.Linha,Posicao.Coluna -1);
+                    if(Tab.PosicaoValida(esquerda) &&  existeInimigo(esquerda) && Tab.peca(esquerda) == partidade.vuneravelEnPassant){
+                        mat[esquerda.Linha, esquerda.Coluna] = true;
+                    }
+                    Posicaocs direita = new Posicaocs(Posicao.Linha, Posicao.Coluna + 1);
+                    if (Tab.PosicaoValida(direita) && existeInimigo(direita) && Tab.peca(direita) == partidade.vuneravelEnPassant)
+                    {
+                        mat[direita.Linha, direita.Coluna] = true;
+                    }
+                }
+
             }
             else
             {
@@ -67,12 +80,10 @@ namespace Xadrez.xadrez
                     mat[pos.Linha, pos.Coluna] = true;
                 }
 
-                // Duas casas à frente
-                Posicaocs pos2 = new Posicaocs(Posicao.Linha + 2, Posicao.Coluna);
-                Posicaocs pos1 = new Posicaocs(Posicao.Linha + 1, Posicao.Coluna);
-                if (Tab.PosicaoValida(pos2) && Livre(pos2) && Livre(pos1) && QtdeMOvimentos == 0)
+                pos.DefinirValores(Posicao.Linha +2,Posicao.Coluna);
+                if (Tab.PosicaoValida(pos) && Livre(pos) && Livre(pos) && QtdeMOvimentos == 0)
                 {
-                    mat[pos2.Linha, pos2.Coluna] = true;
+                    mat[pos.Linha, pos.Coluna] = true;
                 }
 
                 // Captura à esquerda
@@ -87,6 +98,20 @@ namespace Xadrez.xadrez
                 if (Tab.PosicaoValida(pos) && existeInimigo(pos))
                 {
                     mat[pos.Linha, pos.Coluna] = true;
+                }
+                // #Jogada en passant
+                if (Posicao.Linha == 4)
+                {
+                    Posicaocs esquerda = new Posicaocs(Posicao.Linha, Posicao.Coluna - 1);
+                    if (Tab.PosicaoValida(esquerda) && existeInimigo(esquerda) && Tab.peca(esquerda) == partidade.vuneravelEnPassant)
+                    {
+                        mat[esquerda.Linha, esquerda.Coluna] = true;
+                    }
+                    Posicaocs direita = new Posicaocs(Posicao.Linha, Posicao.Coluna + 1);
+                    if (Tab.PosicaoValida(direita) && existeInimigo(direita) && Tab.peca(direita) == partidade.vuneravelEnPassant)
+                    {
+                        mat[direita.Linha, direita.Coluna] = true;
+                    }
                 }
             }
 
