@@ -56,6 +56,26 @@ namespace xadrez
                 T.IncrementarQtdeMovimentos();
                 Tab.ColocarPeca(T, destinoT);
             }
+
+            //jogadaespecial en passant
+           if(P is Peao)
+            {
+                if(Origem.Coluna != Destino.Coluna && pecasCapturadas == null)
+                {
+                    Posicaocs posP;
+                    if(P.Cor == Cor.Branca)
+                    {
+                        posP = new Posicaocs(Destino.Linha +1, Origem.Coluna);
+                    }
+                    else
+                    {
+                        posP = new Posicaocs(Destino.Linha -1,Destino.Coluna);
+                    }
+                    pecasCapturadas = Tab.RetirarPeca(posP);
+                    Capturadas.Add((pecasCapturadas));
+                }
+            }
+
             return PecaCapturada;
         }
         public void desfazMovimento(Posicaocs Origem, Posicaocs Destino, Peca pecaCapiturada)
