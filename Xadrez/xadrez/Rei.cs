@@ -9,7 +9,7 @@ namespace xadrez
         public Rei(Tabuleiro tab, Cor cor, PartidadeXadres partida) : base(tab, cor)
         {
             this.partida = partida;
-            
+
         }
 
         public override string ToString()
@@ -106,7 +106,7 @@ namespace xadrez
                 }
 
                 // Jogada especial Roque pequeno e grande
-                if (qtdeMovimentos == 0 && !partida.Xeque)
+                if ()
                 {
                     // Roque pequeno
                     Posicaocs posTorre1 = new Posicaocs(Posicao.Linha, Posicao.Coluna + 3);
